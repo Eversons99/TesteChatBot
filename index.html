@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 5vh;
+            background-color: rgb(219, 231, 231);
+            margin: auto;
+            padding: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 70vh;
+            font-size: 20;
+
+        }
+        .apresentacao {
+            max-width: 50vh;
+            justify-content: flex-start;
+            background-color: rgb(198, 214, 198);
+            border-radius: 30px;
+            padding: 1vh;
+            margin:1vh;
+            
+        }
+        .duv, .btn{
+            max-width: 50vh;
+            justify-content: flex-start;
+            background-color: rgb(198, 214, 198);
+            border-radius: 30px;
+            padding: 1vh;
+            margin:1vh;
+
+        }
+
+        .res {
+            max-width: 80vh;
+            justify-content: flex-end;
+            background-color: rgb(241, 241, 241);
+            border-radius: 30px;
+            padding: 1vh;
+            margin:1vh;
+            text-align: right;
+        }
+        .ressec{
+            max-width: 80vh;
+            justify-content: flex-end;
+            background-color: rgb(241, 241, 241);
+            border-radius: 30px;
+            padding: 1vh;
+            margin:1vh;
+            text-align: right;
+
+        }
+        #name{
+            width: 45vh;
+            background-color: rgb(198, 214, 198);
+        }
+        .duv{
+            display:flex;
+            flex-direction: row;
+        }
+      
+    </style>
+</head>
+<body onload="esconde()">
+    <div class="container">
+        <div class="apresentacao">
+            <p>Olá, como posso lhe ajudar? Digite abaixo seu interesse ou dúvida.</p>
+        </div>
+
+        <div class="duv">
+            
+            <textarea name="" id="name" cols="30" rows="1" placeholder="Insira sua dúvida"></textarea>
+            <button onclick="saudacao()" id="btn">Enviar</button>
+        </div>
+
+        <div class="res">
+
+
+        </div>
+        <div class="ressec">
+
+
+        </div>
+
+    </div>
+    
+    
+        
+
+    <script>
+        function esconde(){
+            const div = document.querySelector('.res')
+            const divressec = document.querySelector('.ressec')
+            div.style.display =  "none"
+            divressec.style.display =  "none"
+        }
+        function saudacao(){
+            
+
+         
+            const interesse = document.getElementById('name').value
+            const btn = document.querySelector('#btn')
+            const div = document.querySelector('.res')
+            const divressec = document.querySelector('.ressec') 
+            
+            const resContent = document.createElement('p')
+            const res = document.createElement('p')
+            resContent.setAttribute('id', 'resposta')
+            res.setAttribute('id', 'resposta')
+            res.textContent = 'Ah entendi, interessante !'
+            resContent.textContent = `Assim que possível entrarei em contato com mais informações sobre ${interesse}`
+            
+            //interesse.setAttribute('disabled', 'true')
+            btn.style.display =  "none"
+            res.style.display =  "flex"
+            divressec.style.display =  "flex"
+            div.style.display =  "flex"
+
+            div.append(res)
+
+            if (interesse != '') 
+            {
+                
+               
+                
+                divressec.append(resContent)
+                console.log(`Entendi qual seu interesse, assim que possível entrarei em contato com mais informações sobre ${interesse}`)
+            }
+
+            
+        }
+        
+    </script>
+</body>
+</html>
