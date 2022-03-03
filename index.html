@@ -16,6 +16,8 @@
             justify-content: center;
             max-width: 70vh;
             font-size: 20;
+            height: 95vh;
+            font-family: Arial, Helvetica, sans-serif;
 
         }
         .apresentacao {
@@ -114,7 +116,7 @@
             resContent.setAttribute('id', 'resposta')
             res.setAttribute('id', 'resposta')
             res.textContent = 'Ah entendi, interessante !'
-            resContent.textContent = `Assim que possível entrarei em contato com mais informações sobre ${interesse}`
+            resContent.textContent = "Assim que possível entrarei em contato com mais informações sobre " + interesse
             
             //interesse.setAttribute('disabled', 'true')
             btn.style.display =  "none"
@@ -122,15 +124,13 @@
             divressec.style.display =  "flex"
             div.style.display =  "flex"
 
-            div.append(res)
+            
 
             if (interesse != '') 
-            {
-                
-               
-                
+            {   
+                div.append(res)
                 divressec.append(resContent)
-                console.log(`Entendi qual seu interesse, assim que possível entrarei em contato com mais informações sobre ${interesse}`)
+                
             }
 
             
